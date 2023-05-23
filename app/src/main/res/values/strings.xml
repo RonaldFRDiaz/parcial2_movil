@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">parcial2_00131321_Ronald_RIvas</string>
+    <string name="billboard">Tracker</string>
+    <string name="add_tracker">add tracker</string>
+    <string name="titulonew">agregar tracker</string>
+    <string name="name">name</string>
+    <string name="category">Category</string>
+    <string name="submitButtonText">Agregar</string>
+    <string name="infoText">nombre del carro</string>
 </resources>

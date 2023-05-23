@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="mediumGap">16dp</dimen>
+    <dimen name="extraLargeTextGap">40dp</dimen>
+    <dimen name="noGap">16dp</dimen>
+    <dimen name="mediumTextGap">20dp</dimen>
+    <dimen name="smallGap">15dp</dimen>
+    <dimen name="LargeGap">65dp</dimen>
+    <dimen name="mediumLargeTextGap">20dp</dimen>
+    <dimen name="largeTextGap">18dp</dimen>
 </resources>
