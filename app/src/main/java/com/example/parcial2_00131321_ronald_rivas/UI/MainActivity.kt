@@ -1,4 +1,4 @@
-package com.example.parcial2_00131321_ronald_rivas
+package com.example.parcial2_00131321_ronald_rivas.UI
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
