@@ -8,4 +8,7 @@
     <dimen name="LargeGap">65dp</dimen>
     <dimen name="mediumLargeTextGap">20dp</dimen>
     <dimen name="largeTextGap">18dp</dimen>
+    <dimen name="extra_gap">18dp</dimen>
+    <dimen name="normal_gap">16dp</dimen>
+    <dimen name="gap">8dp</dimen>
 </resources>

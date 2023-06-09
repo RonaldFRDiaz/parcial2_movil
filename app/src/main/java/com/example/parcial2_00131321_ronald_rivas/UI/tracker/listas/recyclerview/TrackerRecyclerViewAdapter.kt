@@ -9,7 +9,7 @@ import com.example.parcial2_00131321_ronald_rivas.databinding.TrackerItemBinding
 class TrackerRecyclerViewAdapter(
     private val clickListener: (trackermodel) -> Unit
 ) : RecyclerView.Adapter<TrackerRecyclerViewHolder>()  {
-    private val movies = ArrayList<trackermodel>()
+    private val trackers = ArrayList<trackermodel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrackerRecyclerViewHolder {
         val binding = TrackerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -17,16 +17,16 @@ class TrackerRecyclerViewAdapter(
     }
 
     override fun getItemCount(): Int {
-        return movies.size
+        return trackers.size
     }
 
     override fun onBindViewHolder(holder: TrackerRecyclerViewHolder, position: Int) {
-        val movie = movies[position]
-        holder.bind(movie, clickListener)
+        val tracker = trackers[position]
+        holder.bind(tracker, clickListener)
     }
 
-    fun setData(moviesList: List<trackermodel>) {
-        movies.clear()
-        movies.addAll(moviesList)
+    fun setData(trackerList: List<trackermodel>) {
+        trackers.clear()
+        trackers.addAll(trackerList)
     }
 }

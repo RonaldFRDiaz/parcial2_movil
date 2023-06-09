@@ -13,7 +13,7 @@ val name2 = "camioneta azul"
 val category2 = "8"
 
 
-var movies = mutableListOf(
+var tracker = mutableListOf(
     trackermodel(name, category,),
     trackermodel(name2, category2)
 )

@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.parcial2_00131321_ronald_rivas.TrackerReviewerApplication
+import com.example.parcial2_00131321_ronald_rivas.trackerRA
 import com.example.parcial2_00131321_ronald_rivas.data.model.trackermodel
 import com.example.parcial2_00131321_ronald_rivas.Repository.trackerRepository
 
@@ -18,13 +18,13 @@ class TrackerViewModel(private val repository: trackerRepository) : ViewModel() 
 
     private fun addTrackers(tracker: trackermodel) = repository.addTrackers(tracker)
 
-    fun createMovie() {
+    fun createtracker() {
         if (!validateData()) {
             status.value = WRONG_INFORMATION
             return
         }
 
-        val movie = trackermodel(
+        val tracker = trackermodel(
             name.value!!,
             category.value!!,
 
@@ -33,7 +33,7 @@ class TrackerViewModel(private val repository: trackerRepository) : ViewModel() 
         addTrackers(tracker)
         clearData()
 
-        status.value = MOVIE_CREATED
+        status.value = TRACKER_CREATED
     }
 
     private fun validateData(): Boolean {
@@ -53,20 +53,20 @@ class TrackerViewModel(private val repository: trackerRepository) : ViewModel() 
         status.value = INACTIVE
     }
 
-    fun setSelectedMovie(movie: trackermodel) {
-        name.value = movie.name
-        category.value = movie.category
+    fun setSelectedtracker(tracker: trackermodel) {
+        name.value = tracker.name
+        category.value = tracker.category
     }
 
     companion object {
         val Factory = viewModelFactory {
             initializer {
-                val app = this[APPLICATION_KEY] as TrackerReviewerApplication
-                TrackerViewModel(app.movieRepository)
+                val app = this[APPLICATION_KEY] as trackerRA
+                TrackerViewModel(app.trackersRepository)
             }
         }
 
-        const val MOVIE_CREATED = "Movie created"
+        const val TRACKER_CREATED = "Movie created"
         const val WRONG_INFORMATION = "Wrong information"
         const val INACTIVE = ""
     }

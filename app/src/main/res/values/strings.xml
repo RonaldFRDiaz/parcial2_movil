@@ -7,4 +7,6 @@
     <string name="category">Category</string>
     <string name="submitButtonText">Agregar</string>
     <string name="infoText">nombre del carro</string>
+    <string name="tittle_TextView">lista de trackers</string>
+    <string name="add_button">add button</string>
 </resources>

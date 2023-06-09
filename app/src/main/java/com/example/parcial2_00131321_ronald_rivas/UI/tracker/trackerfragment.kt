@@ -7,14 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.example.parcial2_00131321_ronald_rivas.R
 import com.example.parcial2_00131321_ronald_rivas.databinding.FragmentTrackerBinding
-import com.example.parcial2_00131321_ronald_rivas.UI.tracker.viewmodel.trackerviewmodel
+import com.example.parcial2_00131321_ronald_rivas.UI.tracker.viewmodel.TrackerViewModel
+import com.example.parcial2_00131321_ronald_rivas.data.model.trackermodel
 
 class TrackerFragment : Fragment() {
 
-    private val trackerviewmodel: trackerviewmodel by activityViewModels {
-        trackerviewmodel.Factory
+    private val trackerViewModel: trackermodel by activityViewModels {
+        TrackerViewModel.Factory
     }
 
     private lateinit var binding: FragmentTrackerBinding
@@ -27,14 +27,9 @@ class TrackerFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        setViewModel()
-    }
-
-    private fun setViewModel() {
-        binding.viewmodel = trackerviewmodel
+    override fun onViewCreated(View: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(View, savedInstanceState)
+        binding.viewmodel = TrackerViewModel
     }
 
 }

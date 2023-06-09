@@ -8,14 +8,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.parcial2_00131321_ronald_rivas.databinding.FragmentNewTrackerBinding
-import com.example.parcial2_00131321_ronald_rivas.UI.tracker.viewmodel.trackerviewmodel
+import com.example.parcial2_00131321_ronald_rivas.UI.tracker.viewmodel.TrackerViewModel
 
 class NewTrackerFragment : Fragment() {
+    private lateinit var btnSubmit: Button
 
-    private val TrackerViewModel: trackerRepository by activityViewModels {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+    private val TrackerViewModel: TrackerViewModel by activityViewModels {
         TrackerViewModel.Factory
     }
 
@@ -37,20 +43,25 @@ class NewTrackerFragment : Fragment() {
     }
 
     private fun setViewModel() {
-        binding.viewmodel = trackerviewmodel
+        binding.viewmodel = TrackerViewModel
     }
 
     private fun observeStatus() {
         TrackerViewModel.status.observe(viewLifecycleOwner) { status ->
             when {
                 status.equals(TrackerViewModel.WRONG_INFORMATION) -> {
+                    Log.d(APP_TAG, status)
                     TrackerViewModel.clearStatus()
                 }
-                status.equals(TrackerViewModel.MOVIE_CREATED) -> {
+                status.equals(TrackerViewModel.TRACKER_CREATED) -> {
+                    Log.d(APP_TAG, status)
+                    Log.d(APP_TAG, TrackerViewModel.addTrackers().toString())
                     TrackerViewModel.clearStatus()
                     findNavController().popBackStack()
                 }
             }
         }
+    }companion object {
+        const val APP_TAG = "APP__TAG"
     }
 }

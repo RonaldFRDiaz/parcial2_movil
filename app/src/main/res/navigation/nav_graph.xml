@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/billboardFragment">
+
+    <fragment
+        android:id="@+id/billboardFragment"
+        android:name="com.example.parcial2_00131321_ronald_rivas.UI.tracker.listas.BillboardFragment"
+        android:label="BillboardFragment" >
+        <action
+            android:id="@+id/action_billboardFragment_to_newTrackerFragment"
+            app:destination="@id/newTrackerFragment" />
+        <action
+            android:id="@+id/action_billboardFragment_to_trackerFragment"
+            app:destination="@id/trackerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newTrackerFragment"
+        android:name="com.example.parcial2_00131321_ronald_rivas.UI.tracker.newtracker.NewTrackerFragment"
+        android:label="NewTrackerFragment" />
+    <fragment
+        android:id="@+id/trackerFragment"
+        android:name="com.example.parcial2_00131321_ronald_rivas.UI.tracker.TrackerFragment"
+        android:label="TrackerFragment" />
+</navigation>
