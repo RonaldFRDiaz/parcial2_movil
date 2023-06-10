@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.parcial2_00131321_ronald_rivas.UI.tracker.viewmodel.TrackerViewModel" />
+            type="com.example.parcial2_00131321_ronald_rivas.ui.tracker.viewmodel.TrackerViewModel" />
     </data>
 
     <FrameLayout

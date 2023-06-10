@@ -40,19 +40,19 @@
                         android:paddingHorizontal="@dimen/normal_gap"
                         android:paddingVertical="@dimen/gap">
                     <TextView
-                        android:id="@+id/name_edit_text"
+                        android:id="@+id/name_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/mediumGap"
                         android:layout_marginEnd="@dimen/mediumGap"
                         android:fontFamily="sans-serif-condensed"
                         android:text="@string/infoText"
-                        android:textColor="@color/white"
+                        android:textColor="@color/category"
                         android:textSize="@dimen/mediumLargeTextGap"
                         tools:ignore="SpUsage"/>
 
                     <TextView
-                        android:id="@+id/category_edit_text"
+                        android:id="@+id/category_text_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-condensed-medium"
@@ -67,4 +67,4 @@
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-    <?xml version="1.0" encoding="utf-8"?>
+

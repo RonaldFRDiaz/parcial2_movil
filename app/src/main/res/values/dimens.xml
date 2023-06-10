@@ -11,4 +11,8 @@
     <dimen name="extra_gap">18dp</dimen>
     <dimen name="normal_gap">16dp</dimen>
     <dimen name="gap">8dp</dimen>
+    <dimen name="xlarge_gap">20dp</dimen>
+    <dimen name="width_image">250dp</dimen>
+    <dimen name="height_image">250dp</dimen>
+    <dimen name="lg_text_size">20dp</dimen>
 </resources>

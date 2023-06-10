@@ -1,22 +1,22 @@
-package com.example.parcial2_00131321_ronald_rivas.UI.tracker.viewmodel
+package com.example.parcial2_00131321_ronald_rivas.ui.tracker.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.parcial2_00131321_ronald_rivas.trackerRA
+import com.example.parcial2_00131321_ronald_rivas.TrackerRA
 import com.example.parcial2_00131321_ronald_rivas.data.model.trackermodel
 import com.example.parcial2_00131321_ronald_rivas.Repository.trackerRepository
 
 class TrackerViewModel(private val repository: trackerRepository) : ViewModel() {
     var name = MutableLiveData("")
     var category = MutableLiveData("")
-
+    var status = MutableLiveData("")
 
     fun getTracker() = repository.getTrackers()
 
-    private fun addTrackers(tracker: trackermodel) = repository.addTrackers(tracker)
+    fun addTrackers(tracker: trackermodel) = repository.addTrackers(tracker)
 
     fun createtracker() {
         if (!validateData()) {
@@ -61,7 +61,7 @@ class TrackerViewModel(private val repository: trackerRepository) : ViewModel() 
     companion object {
         val Factory = viewModelFactory {
             initializer {
-                val app = this[APPLICATION_KEY] as trackerRA
+                val app = this[APPLICATION_KEY] as TrackerRA
                 TrackerViewModel(app.trackersRepository)
             }
         }

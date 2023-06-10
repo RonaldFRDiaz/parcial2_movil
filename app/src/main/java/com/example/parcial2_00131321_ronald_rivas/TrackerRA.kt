@@ -6,7 +6,7 @@ import com.example.parcial2_00131321_ronald_rivas.data.tracker
 
 
 
-class trackerRA: Application(){
+class TrackerRA: Application(){
     val trackersRepository: trackerRepository by lazy {
         trackerRepository(tracker)
     }

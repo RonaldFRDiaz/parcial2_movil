@@ -1,6 +1,4 @@
-package com.example.parcial2_00131321_ronald_rivas.UI.tracker.newtracker
-
-import com.example.parcial2_00131321_ronald_rivas.Repository.trackerRepository
+package com.example.parcial2_00131321_ronald_rivas.ui.tracker.Newtracker
 
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +10,7 @@ import android.widget.Button
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.parcial2_00131321_ronald_rivas.databinding.FragmentNewTrackerBinding
-import com.example.parcial2_00131321_ronald_rivas.UI.tracker.viewmodel.TrackerViewModel
+import com.example.parcial2_00131321_ronald_rivas.ui.tracker.viewmodel.TrackerViewModel
 
 class NewTrackerFragment : Fragment() {
     private lateinit var btnSubmit: Button
@@ -21,7 +19,7 @@ class NewTrackerFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    private val TrackerViewModel: TrackerViewModel by activityViewModels {
+    private val carroViewModel: TrackerViewModel by activityViewModels {
         TrackerViewModel.Factory
     }
 
@@ -43,20 +41,20 @@ class NewTrackerFragment : Fragment() {
     }
 
     private fun setViewModel() {
-        binding.viewmodel = TrackerViewModel
+        binding.viewmodel = carroViewModel
     }
 
     private fun observeStatus() {
-        TrackerViewModel.status.observe(viewLifecycleOwner) { status ->
-            when {
+        carroViewModel.status.observe(viewLifecycleOwner) {
+                status -> when {
                 status.equals(TrackerViewModel.WRONG_INFORMATION) -> {
                     Log.d(APP_TAG, status)
-                    TrackerViewModel.clearStatus()
+                    carroViewModel.clearStatus()
                 }
                 status.equals(TrackerViewModel.TRACKER_CREATED) -> {
                     Log.d(APP_TAG, status)
-                    Log.d(APP_TAG, TrackerViewModel.addTrackers().toString())
-                    TrackerViewModel.clearStatus()
+                    Log.d(APP_TAG, carroViewModel.getTracker().toString())
+                    carroViewModel.clearStatus()
                     findNavController().popBackStack()
                 }
             }

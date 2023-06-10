@@ -6,63 +6,74 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.parcial2_00131321_ronald_rivas.UI.tracker.viewmodel.trackerviewmodel" />
+            type="com.example.parcial2_00131321_ronald_rivas.ui.tracker.viewmodel.TrackerViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.movie.MovieFragment"
+        tools:context=".ui.tracker.TrackerFragment"
         android:background="@color/backgroundLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_marginTop="32dp"
-                android:src="@drawable/no_image"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/width_image"
+            android:layout_height="@dimen/height_image"
+            android:src="@drawable/no_image"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_gap"
+            android:layout_marginEnd="@dimen/normal_gap"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/mediumGap"
-                android:layout_marginEnd="@dimen/mediumGap"
-                android:layout_marginTop="24dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="@{viewmodel.name}"
-                android:textColor="@color/white"
-                android:textSize="@dimen/mediumTextGap"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
-                tools:text="@string/infoText"
-                tools:ignore="SpUsage" />
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_gap"
+            android:text="@={viewmodel.name}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/lg_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/infoText" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/mediumGap"
-                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginTop="@dimen/normal_gap"
+                android:layout_weight="2"
                 android:text="@{viewmodel.category}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/mediumTextGap"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7"
-                tools:ignore="SpUsage"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
                 tools:text="@string/category" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

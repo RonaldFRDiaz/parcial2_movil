@@ -1,4 +1,4 @@
-package com.example.parcial2_00131321_ronald_rivas.UI.tracker
+package com.example.parcial2_00131321_ronald_rivas.ui.tracker
 
 
 import android.os.Bundle
@@ -8,12 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.parcial2_00131321_ronald_rivas.databinding.FragmentTrackerBinding
-import com.example.parcial2_00131321_ronald_rivas.UI.tracker.viewmodel.TrackerViewModel
-import com.example.parcial2_00131321_ronald_rivas.data.model.trackermodel
+import com.example.parcial2_00131321_ronald_rivas.ui.tracker.viewmodel.TrackerViewModel
 
 class TrackerFragment : Fragment() {
 
-    private val trackerViewModel: trackermodel by activityViewModels {
+    private val carroViewModel: TrackerViewModel by activityViewModels {
         TrackerViewModel.Factory
     }
 
@@ -29,7 +28,7 @@ class TrackerFragment : Fragment() {
 
     override fun onViewCreated(View: View, savedInstanceState: Bundle?) {
         super.onViewCreated(View, savedInstanceState)
-        binding.viewmodel = TrackerViewModel
+        binding.viewmodel = carroViewModel
     }
 
 }

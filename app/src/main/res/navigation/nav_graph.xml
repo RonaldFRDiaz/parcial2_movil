@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/billboardFragment"
-        android:name="com.example.parcial2_00131321_ronald_rivas.UI.tracker.listas.BillboardFragment"
+        android:name="com.example.parcial2_00131321_ronald_rivas.ui.tracker.Listas.BillboardFragment"
         android:label="BillboardFragment" >
         <action
             android:id="@+id/action_billboardFragment_to_newTrackerFragment"
@@ -17,10 +17,10 @@
     </fragment>
     <fragment
         android:id="@+id/newTrackerFragment"
-        android:name="com.example.parcial2_00131321_ronald_rivas.UI.tracker.newtracker.NewTrackerFragment"
+        android:name="com.example.parcial2_00131321_ronald_rivas.ui.tracker.Newtracker.NewTrackerFragment"
         android:label="NewTrackerFragment" />
     <fragment
         android:id="@+id/trackerFragment"
-        android:name="com.example.parcial2_00131321_ronald_rivas.UI.tracker.TrackerFragment"
+        android:name="com.example.parcial2_00131321_ronald_rivas.ui.tracker.TrackerFragment"
         android:label="TrackerFragment" />
 </navigation>
