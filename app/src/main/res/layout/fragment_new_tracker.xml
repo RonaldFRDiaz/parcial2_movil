@@ -11,7 +11,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.tracker.Newtracker.NewTrackerFragment"
+        tools:context=".ui.tracker.newtracker.NewTrackerFragment"
         android:background="@color/backgroundLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,17 +19,16 @@
             android:layout_height="match_parent">
 
 
-
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mediumGap"
                 android:gravity="center"
                 android:text="@string/titulonew"
+                android:textColor="#DD2C00"
                 android:textSize="@dimen/extraLargeTextGap"
-                android:layout_marginTop="@dimen/mediumGap"
                 android:textStyle="bold"
-                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -51,26 +50,31 @@
                     <EditText
                         android:id="@+id/name_edit_text"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/xlarge_gap"
-                        android:layout_margin="@dimen/normal_gap"
+                        android:layout_height="48dp"
+                        android:layout_margin="30dp"
                         android:background="@color/cardLayout"
                         android:hint="@string/name_channel"
                         android:text="@={viewmodel.name}"
                         android:padding="@dimen/normal_gap"
                         android:textColor="@color/white"
-                        android:textColorHint="@color/white"
-                         />
+                        android:textColorHint="@color/black"
+                        android:autofillHints=""
+                        android:inputType="textAutoComplete"
+                        tools:ignore="VisualLintTextFieldSize" />
             <EditText
                 android:id="@+id/category_edit_text"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/xlarge_gap"
-                android:layout_margin="@dimen/normal_gap"
+                android:layout_height="48dp"
+                android:layout_margin="30dp"
                 android:background="@color/cardLayout"
                 android:hint="@string/content_channel"
+                android:inputType="textAutoComplete"
                 android:text="@={viewmodel.Category}"
                 android:padding="@dimen/normal_gap"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColorHint="@color/black"
+                android:autofillHints=""
+                tools:ignore="VisualLintTextFieldSize" />
         </LinearLayout>
 
             <Button

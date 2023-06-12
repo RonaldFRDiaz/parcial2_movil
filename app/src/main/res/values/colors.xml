@@ -12,4 +12,6 @@
     <color name="cardLayout">#BAEEA2</color>
     <color name="category">#6E61EB</color>
     <color name="backroundLayout">#143192</color>
+    <color name="red">#FF200F</color>
+    <color name="nombre">#000000</color>
 </resources>

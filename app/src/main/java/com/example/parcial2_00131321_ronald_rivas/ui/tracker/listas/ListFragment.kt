@@ -1,16 +1,16 @@
-package com.example.parcial2_00131321_ronald_rivas.ui.tracker.Listas
+package com.example.parcial2_00131321_ronald_rivas.ui.tracker.listas
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parcial2_00131321_ronald_rivas.R
-import com.example.parcial2_00131321_ronald_rivas.ui.tracker.Listas.recyclerview.TrackerRecyclerViewAdapter
+import com.example.parcial2_00131321_ronald_rivas.ui.tracker.listas.recyclerview.TrackerRecyclerViewAdapter
 import com.example.parcial2_00131321_ronald_rivas.ui.tracker.viewmodel.TrackerViewModel
 import com.example.parcial2_00131321_ronald_rivas.data.model.trackermodel
 import com.example.parcial2_00131321_ronald_rivas.databinding.FragmentTrackerBinding
@@ -39,7 +39,7 @@ class ListFragment : Fragment() {
 
         setRecyclerView(view)
 
-        binding.btnLinkNewTracker.setOnClickListener {
+        binding.BtnLinkNewTracker.setOnClickListener {
             carroViewModel.clearData()
             it.findNavController().navigate(R.id.action_billboardFragment_to_newTrackerFragment)
         }
@@ -58,9 +58,11 @@ class ListFragment : Fragment() {
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun displayTracker() {
         adapter.setData(carroViewModel.getTracker())
         adapter.notifyDataSetChanged()
+
     }
 
     private fun showSelectedItem(tracker: trackermodel) {

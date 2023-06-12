@@ -1,4 +1,4 @@
-package com.example.parcial2_00131321_ronald_rivas.ui.tracker.Newtracker
+package com.example.parcial2_00131321_ronald_rivas.ui.tracker.newtracker
 
 import android.os.Bundle
 import android.util.Log

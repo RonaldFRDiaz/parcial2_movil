@@ -11,4 +11,5 @@
     <string name="add_button">add button</string>
     <string name="name_channel">nombre del tracker</string>
     <string name="content_channel">categoria</string>
+    <string name="imagen_todo">imagen_todo</string>
 </resources>

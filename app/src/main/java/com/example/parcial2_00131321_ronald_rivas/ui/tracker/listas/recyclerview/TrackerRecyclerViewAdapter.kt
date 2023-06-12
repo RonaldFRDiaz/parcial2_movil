@@ -1,4 +1,4 @@
-package com.example.parcial2_00131321_ronald_rivas.ui.tracker.Listas.recyclerview
+package com.example.parcial2_00131321_ronald_rivas.ui.tracker.listas.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

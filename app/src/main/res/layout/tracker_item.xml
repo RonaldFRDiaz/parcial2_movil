@@ -28,8 +28,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="120dp"
                 android:layout_weight="0.6"
-                android:paddingLeft="@dimen/gap"
-                android:src="@drawable/no_image" />
+                android:paddingStart="@dimen/gap"
+                android:src="@drawable/no_image"
+                android:contentDescription="@string/imagen_todo"
+                tools:ignore="RtlSymmetry" />
 
 
                     <LinearLayout
@@ -39,28 +41,29 @@
                         android:orientation="vertical"
                         android:paddingHorizontal="@dimen/normal_gap"
                         android:paddingVertical="@dimen/gap">
-                    <TextView
-                        android:id="@+id/name_text_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/mediumGap"
-                        android:layout_marginEnd="@dimen/mediumGap"
-                        android:fontFamily="sans-serif-condensed"
-                        android:text="@string/infoText"
-                        android:textColor="@color/category"
-                        android:textSize="@dimen/mediumLargeTextGap"
-                        tools:ignore="SpUsage"/>
 
-                    <TextView
-                        android:id="@+id/category_text_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-condensed-medium"
-                        android:text="@string/category"
-                        android:textColor="@color/category"
-                        android:textSize="@dimen/largeTextGap"
-                        android:textStyle="bold"
-                        tools:ignore="SpUsage" />
+                        <TextView
+                            android:id="@+id/name_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/mediumGap"
+                            android:layout_marginEnd="@dimen/mediumGap"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="@string/infoText"
+                            android:textColor="@color/nombre"
+                            android:textSize="@dimen/mediumLargeTextGap"
+                            tools:ignore="SpUsage,TextSizeCheck" />
+
+                        <TextView
+                            android:id="@+id/category_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="@string/category"
+                            android:textColor="@color/category"
+                            android:textSize="@dimen/largeTextGap"
+                            android:textStyle="bold"
+                            tools:ignore="SpUsage,TextSizeCheck" />
                 </LinearLayout>
             </LinearLayout>
 
