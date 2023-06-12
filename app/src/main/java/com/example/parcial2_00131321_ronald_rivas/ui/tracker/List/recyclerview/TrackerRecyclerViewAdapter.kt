@@ -1,4 +1,4 @@
-package com.example.parcial2_00131321_ronald_rivas.ui.tracker.listas.recyclerview
+package com.example.parcial2_00131321_ronald_rivas.ui.tracker.List.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -29,4 +29,6 @@ class TrackerRecyclerViewAdapter(
         trackers.clear()
         trackers.addAll(trackerList)
     }
+
+
 }

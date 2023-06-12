@@ -1,36 +1,35 @@
-package com.example.parcial2_00131321_ronald_rivas.ui.tracker.listas
+package com.example.parcial2_00131321_ronald_rivas.ui.tracker.List
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parcial2_00131321_ronald_rivas.R
-import com.example.parcial2_00131321_ronald_rivas.ui.tracker.listas.recyclerview.TrackerRecyclerViewAdapter
-import com.example.parcial2_00131321_ronald_rivas.ui.tracker.viewmodel.TrackerViewModel
 import com.example.parcial2_00131321_ronald_rivas.data.model.trackermodel
-import com.example.parcial2_00131321_ronald_rivas.databinding.FragmentTrackerBinding
+import com.example.parcial2_00131321_ronald_rivas.databinding.FragmentListaBinding
+import com.example.parcial2_00131321_ronald_rivas.ui.tracker.List.recyclerview.TrackerRecyclerViewAdapter
+import com.example.parcial2_00131321_ronald_rivas.ui.tracker.viewmodel.TrackerViewModel
 
 
 class ListFragment : Fragment() {
-    private val carroViewModel: TrackerViewModel by activityViewModels {
+    private val carroViewModel : TrackerViewModel by activityViewModels {
         TrackerViewModel.Factory
     }
-
     private lateinit var adapter: TrackerRecyclerViewAdapter
 
-    private lateinit var binding: FragmentTrackerBinding
+    private lateinit var binding: FragmentListaBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentTrackerBinding.inflate(inflater, container, false)
+        binding = FragmentListaBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -38,31 +37,10 @@ class ListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setRecyclerView(view)
-
-        binding.BtnLinkNewTracker.setOnClickListener {
+        binding.btnLinkNewTracker.setOnClickListener{
             carroViewModel.clearData()
             it.findNavController().navigate(R.id.action_billboardFragment_to_newTrackerFragment)
         }
-
-    }
-
-    private fun setRecyclerView(view: View){
-        binding.recycleView.layoutManager = LinearLayoutManager(view.context)
-
-        adapter = TrackerRecyclerViewAdapter { selectedTracker ->
-            showSelectedItem(selectedTracker)
-        }
-
-        binding.recyclerView.adapter = adapter
-        displayTracker()
-    }
-
-
-    @SuppressLint("NotifyDataSetChanged")
-    private fun displayTracker() {
-        adapter.setData(carroViewModel.getTracker())
-        adapter.notifyDataSetChanged()
-
     }
 
     private fun showSelectedItem(tracker: trackermodel) {
@@ -70,4 +48,17 @@ class ListFragment : Fragment() {
         findNavController().navigate(R.id.action_billboardFragment_to_trackerFragment)
     }
 
+    private fun setRecyclerView(view: View){
+        binding.recycleView.layoutManager = LinearLayoutManager(view.context)
+
+        adapter = TrackerRecyclerViewAdapter { selectedTracker -> showSelectedItem(selectedTracker) }
+
+        binding.recycleView.adapter = adapter
+        displayTracker()
+    }
+
+    private fun displayTracker(){
+        adapter.setData(carroViewModel.getTracker())
+        adapter.notifyDataSetChanged()
+    }
 }

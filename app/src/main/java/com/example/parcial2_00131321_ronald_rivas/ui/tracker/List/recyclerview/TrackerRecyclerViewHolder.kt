@@ -1,4 +1,4 @@
-package com.example.parcial2_00131321_ronald_rivas.ui.tracker.listas.recyclerview
+package com.example.parcial2_00131321_ronald_rivas.ui.tracker.List.recyclerview
 
 
 import androidx.recyclerview.widget.RecyclerView

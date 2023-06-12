@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/billboardFragment"
-        android:name="com.example.parcial2_00131321_ronald_rivas.ui.tracker.listas.BillboardFragment"
+        android:name="com.example.parcial2_00131321_ronald_rivas.ui.tracker.List.BillboardFragment"
         android:label="BillboardFragment" >
         <action
             android:id="@+id/action_billboardFragment_to_newTrackerFragment"
