@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -13,9 +14,8 @@
         android:theme="@style/Theme.Parcial2_00131321_Ronald_RIvas"
         tools:targetApi="31">
         <activity
-            android:name=".`MainActivity.kt`"
+            android:name=".ui.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Parcial2_00131321_Ronald_RIvas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

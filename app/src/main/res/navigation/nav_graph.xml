@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/billboardFragment">
 
     <fragment
         android:id="@+id/billboardFragment"
-        android:name="com.example.parcial2_00131321_ronald_rivas.ui.tracker.List.BillboardFragment"
-        android:label="BillboardFragment" >
+        android:name="com.example.parcial2_00131321_ronald_rivas.ui.tracker.List.ListFragment"
+        android:label="BillboardFragment"
+        tools:layout="@layout/fragment_lista">
         <action
             android:id="@+id/action_billboardFragment_to_newTrackerFragment"
             app:destination="@id/newTrackerFragment" />
@@ -18,9 +20,11 @@
     <fragment
         android:id="@+id/newTrackerFragment"
         android:name="com.example.parcial2_00131321_ronald_rivas.ui.tracker.newtracker.NewTrackerFragment"
-        android:label="NewTrackerFragment" />
+        android:label="NewTrackerFragment"
+        tools:layout="@layout/fragment_new_tracker"/>
     <fragment
         android:id="@+id/trackerFragment"
         android:name="com.example.parcial2_00131321_ronald_rivas.ui.tracker.TrackerFragment"
-        android:label="TrackerFragment" />
+        android:label="TrackerFragment"
+        tools:layout="@layout/fragment_tracker"/>
 </navigation>

@@ -1,5 +1,6 @@
 package com.example.parcial2_00131321_ronald_rivas.ui.tracker.List
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +29,7 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentListaBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -57,6 +58,7 @@ class ListFragment : Fragment() {
         displayTracker()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun displayTracker(){
         adapter.setData(carroViewModel.getTracker())
         adapter.notifyDataSetChanged()
